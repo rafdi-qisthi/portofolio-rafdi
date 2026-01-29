@@ -12,21 +12,21 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-[100] px-6 md:px-12 py-4 md:py-6 flex justify-between items-center bg-[#0a0c1b]/90 backdrop-blur-xl border-b border-white/5">
+    <nav className="fixed top-0 w-full z-[100] px-6 md:px-12 py-4 md:py-6 flex justify-between items-center bg-[#0a0c1b]/80 backdrop-blur-xl border-b border-white/5">
       
       {/* LOGO */}
-      <div className="text-xl font-bold tracking-tight text-white z-[110]">
+      <div className="text-xl font-bold tracking-tight text-white flex items-center gap-2 z-[110]">
         <span>Rafdi<span className="text-indigo-400">.Dev</span></span>
       </div>
 
-      {/* MENU DESKTOP */}
+      {/* MENU DESKTOP (Muncul di Laptop) */}
       <div className="hidden md:flex items-center gap-6">
           <div className="flex gap-6 text-sm font-medium text-slate-400 mr-4">
               {navLinks.map((link) => (
                 <a key={link.name} href={link.href} className="hover:text-indigo-400 transition">{link.name}</a>
               ))}
           </div>
-
+          
           <div className="flex items-center gap-4 border-l border-white/10 pl-6">
             <a href="https://linkedin.com/in/rafdi-zul-qisthi-a617a8360/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition transform hover:scale-110">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
@@ -36,10 +36,11 @@ const Navbar = () => {
           </div>
       </div>
 
-      {/* TOMBOL HAMBURGER */}
+      {/* TOMBOL HAMBURGER (Mobile) */}
       <button 
         className="md:hidden text-white p-2 z-[110]" 
         onClick={() => setIsOpen(!isOpen)}
+        aria-label="Toggle Menu"
       >
         <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           {isOpen ? (
@@ -50,24 +51,40 @@ const Navbar = () => {
         </svg>
       </button>
 
-      {/* MENU MOBILE OVERLAY (Solusi agar tidak hilang) */}
-      <div className={`fixed inset-0 bg-[#0a0c1b] flex flex-col items-center justify-center gap-8 transition-all duration-300 z-[105] ${isOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-10'}`}>
-          {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href} 
-              className="text-2xl font-semibold text-slate-300 hover:text-indigo-400"
-              onClick={() => setIsOpen(false)}
-            >
-              {link.name}
-            </a>
-          ))}
-          <div className="flex flex-col items-center gap-6 mt-4 border-t border-white/10 pt-8 w-64">
-             <a href="/cv-rafdi.pdf" target="_blank" className="text-indigo-400 font-bold text-lg">Download CV</a>
-             <a href="#contact" onClick={() => setIsOpen(false)} className="w-full text-center py-4 bg-indigo-600 text-white rounded-xl font-bold">Hubungi Saya</a>
+      {/* MENU MOBILE OVERLAY (Disesuaikan Jaraknya agar Rapi) */}
+      <div className={`fixed inset-0 bg-[#0a0c1b]/95 backdrop-blur-2xl flex flex-col items-start justify-start pt-28 px-8 transition-all duration-300 z-[105] ${isOpen ? 'opacity-100 visible translate-x-0' : 'opacity-0 invisible translate-x-full'}`}>
+          
+          {/* List Link Navigasi Utama */}
+          <div className="flex flex-col gap-6 w-full">
+            {navLinks.map((link) => (
+              <a 
+                key={link.name} 
+                href={link.href} 
+                className="text-xl font-medium text-slate-300 hover:text-indigo-400 border-b border-white/5 pb-2"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.name}
+              </a>
+            ))}
           </div>
-      </div>
+          
+          {/* Menu Tambahan (LinkedIn, CV, Kontak) agar sama dengan Desktop */}
+          <div className="mt-10 w-full flex flex-col gap-5">
+            <div className="flex items-center gap-6">
+                <a href="https://linkedin.com/in/rafdi-zul-qisthi-a617a8360/" target="_blank" className="text-slate-400 hover:text-white transform scale-125 transition">
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="/cv-rafdi.pdf" target="_blank" className="text-indigo-400 font-bold text-lg flex items-center gap-2 underline decoration-indigo-500/30 underline-offset-8">
+                   Download CV
+                </a>
+            </div>
+            
+            <a href="#contact" onClick={() => setIsOpen(false)} className="w-full text-center py-4 bg-indigo-600 text-white rounded-xl font-bold shadow-lg shadow-indigo-500/20">
+              Hubungi Saya
+            </a>
+          </div>
 
+      </div>
     </nav>
   );
 };
