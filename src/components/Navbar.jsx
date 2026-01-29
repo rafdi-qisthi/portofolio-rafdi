@@ -51,16 +51,21 @@ const Navbar = () => {
         </svg>
       </button>
 
-      {/* MENU MOBILE OVERLAY (Disesuaikan Jaraknya agar Rapi) */}
-      <div className={`fixed inset-0 bg-[#0a0c1b]/95 backdrop-blur-2xl flex flex-col items-start justify-start pt-28 px-8 transition-all duration-300 z-[105] ${isOpen ? 'opacity-100 visible translate-x-0' : 'opacity-0 invisible translate-x-full'}`}>
+{/* MENU MOBILE OVERLAY - Diperbaiki kontrasnya */}
+      <div className={`fixed inset-0 bg-[#0a0c1b] flex flex-col items-start justify-start pt-28 px-8 transition-all duration-300 z-[150] ${isOpen ? 'opacity-100 visible translate-x-0' : 'opacity-0 invisible translate-x-full'}`}>
           
-          {/* List Link Navigasi Utama */}
+          {/* Tombol Close agar lebih jelas */}
+          <button className="absolute top-8 right-8 text-white" onClick={() => setIsOpen(false)}>
+             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+          </button>
+
+          {/* List Menu dengan Teks Putih Terang */}
           <div className="flex flex-col gap-6 w-full">
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
                 href={link.href} 
-                className="text-xl font-medium text-slate-300 hover:text-indigo-400 border-b border-white/5 pb-2"
+                className="text-2xl font-semibold text-white hover:text-indigo-400 border-b border-white/10 pb-4"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
@@ -68,22 +73,21 @@ const Navbar = () => {
             ))}
           </div>
           
-          {/* Menu Tambahan (LinkedIn, CV, Kontak) agar sama dengan Desktop */}
-          <div className="mt-10 w-full flex flex-col gap-5">
+          {/* Bagian Bawah Menu (LinkedIn, CV, Kontak) */}
+          <div className="mt-10 w-full flex flex-col gap-6">
             <div className="flex items-center gap-6">
-                <a href="https://linkedin.com/in/rafdi-zul-qisthi-a617a8360/" target="_blank" className="text-slate-400 hover:text-white transform scale-125 transition">
+                <a href="https://linkedin.com/in/rafdi-zul-qisthi-a617a8360/" target="_blank" className="text-slate-400 hover:text-white transform scale-150 transition">
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
-                <a href="/cv-rafdi.pdf" target="_blank" className="text-indigo-400 font-bold text-lg flex items-center gap-2 underline decoration-indigo-500/30 underline-offset-8">
+                <a href="/cv-rafdi.pdf" target="_blank" className="text-indigo-400 font-bold text-xl underline underline-offset-8">
                    Download CV
                 </a>
             </div>
             
-            <a href="#contact" onClick={() => setIsOpen(false)} className="w-full text-center py-4 bg-indigo-600 text-white rounded-xl font-bold shadow-lg shadow-indigo-500/20">
+            <a href="#contact" onClick={() => setIsOpen(false)} className="w-full text-center py-4 bg-indigo-600 text-white rounded-xl font-bold shadow-lg shadow-indigo-500/20 text-lg">
               Hubungi Saya
             </a>
           </div>
-
       </div>
     </nav>
   );
