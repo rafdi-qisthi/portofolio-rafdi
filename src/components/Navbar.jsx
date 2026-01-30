@@ -16,7 +16,8 @@ const Navbar = () => {
         {/* LOGO */}
         <div className="text-xl font-bold tracking-tight text-white flex items-center gap-2">
           <span>
-            Rafdi<span className="text-indigo-400">.Dev</span>
+            <span className="text-slate-400">Portofolio</span>{" "}
+            <span className="text-white font-bold">Rafdi</span>
           </span>
         </div>
 
