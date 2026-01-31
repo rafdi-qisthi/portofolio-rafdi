@@ -20,7 +20,7 @@ const About = () => {
               Halo! Saya <strong className="text-white">Rafdi</strong>. Perjalanan saya di dunia IT dimulai dari rasa penasaran bagaimana sebuah website bekerja, yang kini berkembang menjadi obsesi untuk menciptakan sistem cerdas.
             </p>
             <p>
-              Saat ini saya adalah <strong className="text-white">Mahasiswa Teknik Informatika Tingkat Akhir</strong>. Saya tidak hanya belajar teori, tapi langsung terjun memecahkan masalah nyata—seperti Skripsi saya yang menggabungkan <strong className="text-indigo-300">AI (Computer Vision)</strong> dengan Web App untuk membantu petani.
+              Saat ini saya adalah <strong className="text-white">Mahasiswa Teknik Informatika Tingkat Akhir</strong>. Saya tidak hanya belajar teori, tapi langsung terjun memecahkan masalah nyata - seperti Skripsi saya yang menggabungkan <strong className="text-indigo-300">AI (Computer Vision)</strong> dengan Web App untuk membantu petani.
             </p>
             <p>
               Saya percaya bahwa teknologi terbaik adalah yang <span className="text-indigo-300 font-bold">canggih di belakang layar</span>, namun <span className="text-indigo-300 font-bold">mudah digunakan</span> oleh manusianya.
