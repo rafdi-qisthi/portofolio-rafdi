@@ -7,7 +7,8 @@ import Contact from './components/Contact'
 
 function App() {
   return (
-    <div className="w-full min-h-screen bg-[#070314] text-slate-200 font-sans selection:bg-emerald-500/40 selection:text-white overflow-x-hidden relative">
+
+    <div className="w-full min-h-screen bg-[#070314] text-slate-200 selection:bg-emerald-500/40 selection:text-white overflow-x-hidden relative">
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:40px_40px] opacity-[0.03]"></div>
         {/* Cahaya Emerald di tengah */}

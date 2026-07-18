@@ -23,13 +23,11 @@ const Hero = () => {
                   </a>
 
                   <a 
-                    href="https://wa.me/6281235905493?text=Halo%20Mas%20Rafdi,%20saya%20tertarik%20diskusi%20project." 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                    href="#contact" 
                     className="px-6 md:px-8 py-3.5 border border-emerald-500/50 text-slate-200 hover:bg-emerald-500/10 hover:text-white hover:border-emerald-400 font-medium rounded-full transition duration-300 flex items-center justify-center gap-2 text-sm md:text-base shadow-[0_0_10px_rgba(16,185,129,0.1)]"
                   >
-                      <span>Diskusi Project</span>
-                      <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                      <span>Hubungi Saya</span>
+                      <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                   </a>
               </div>
           </div>
